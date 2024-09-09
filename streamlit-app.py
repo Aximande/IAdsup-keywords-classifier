@@ -201,10 +201,13 @@ def main():
 
     if keywords_file is not None and categories:
         df = pd.read_csv(keywords_file)
-        st.write(f"Uploaded file contains {len(df)} keywords")
+        num_keywords = len(df)  # Get the total number of keywords
+        st.write(f"Uploaded file contains {num_keywords} keywords")
 
-        # Sample size selection
-        sample_size = st.slider("Select sample size", min_value=1, max_value=min(100, len(df)), value=10)
+        # Dynamically set max sample size based on the number of keywords in the uploaded file
+        sample_size = st.slider("Select sample size", min_value=1, max_value=num_keywords, value=min(10, num_keywords))
+
+        # Select a sample of the keywords based on the sample size
         sample_df = df.sample(n=sample_size, random_state=42)
         keywords = sample_df['keywords'].tolist()
 
