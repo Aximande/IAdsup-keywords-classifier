@@ -1,0 +1,13 @@
+openai
+instructor
+pydantic
+python-dotenv
+streamlit
+aiohttp
+docstring-parser
+jiter
+pydantic-core
+rich
+tenacity
+typer
+asyncio
