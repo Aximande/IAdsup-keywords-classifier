@@ -15,7 +15,7 @@ api_key = st.secrets["OPENAI_API_KEY"]
 client = AsyncOpenAI(api_key=api_key)
 
 # Print instructor file location for debugging
-st.write(f"Instructor file location: {instructor.__file__}")
+#st.write(f"Instructor file location: {instructor.__file__}")
 
 # Updated pricing based on input and output tokens -price for 1000 tokens
 MODEL_PRICING = {
